@@ -31,6 +31,7 @@ namespace SimpleShop
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "SimpleShop", Version = "v1"});
             });
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
