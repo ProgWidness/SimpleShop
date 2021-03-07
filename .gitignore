@@ -1,0 +1,10 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/.idea/.idea.SimpleShop/.idea/encodings.xml
+/.idea/.idea.SimpleShop/.idea/indexLayout.xml
+/.idea/.idea.SimpleShop/.idea/vcs.xml
+
+/.idea/.idea.SimpleShop/.idea/
