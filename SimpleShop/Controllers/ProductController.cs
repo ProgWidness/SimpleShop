@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using SimpleShop.Data;
+using SimpleShop.Data.Models;
 
 namespace SimpleShop.Controllers
 {
@@ -7,11 +9,16 @@ namespace SimpleShop.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        private IProductRepository _repository;
 
-        public ProductController(IProductRepository repository)
+        public ProductController()
         {
-            _repository = repository;
+
+        }
+
+        [HttpGet]
+        public ActionResult<List<ProductDto>> GetProduct()
+        {
+
         }
     }
 }

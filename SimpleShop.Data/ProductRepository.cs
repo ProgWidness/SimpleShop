@@ -35,7 +35,7 @@ namespace SimpleShop.Data
 
         public List<ProductDto> GetProducts()
         {
-            return _connection.Query<ProductDto, BrandDto, CategoryDto, ProductDto>(
+            var result = _connection.Query<ProductDto, BrandDto, CategoryDto, ProductDto>(
                         "dbo.Product_SelectAll",
                         (product, brand, category) =>
                         {
@@ -46,6 +46,7 @@ namespace SimpleShop.Data
                         splitOn: "Id")
                     .Distinct()
                     .ToList();
+            return result;
         }
 
     }

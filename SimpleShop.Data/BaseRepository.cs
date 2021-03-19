@@ -7,10 +7,9 @@ namespace SimpleShop.Data
     public abstract class BaseRepository
     {
         protected SqlConnection _connection;
-        protected string _connectionString;
         public BaseRepository(IOptions<AppSettingsConfig> options)
         {
-            _connectionString = options.Value.ConnectionString;
+            _connection = new SqlConnection(options.Value.ConnectionString);
         }
     }
 }
