@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
+
 namespace SimpleShop.Middleware
 {
     public class ExceptionMiddleware
@@ -18,14 +19,14 @@ namespace SimpleShop.Middleware
         public async Task InvokeAsync(HttpContext httpContext)
         {
             await _next(httpContext);
-            // try
-            // {
-            //     await _next(httpContext);
-            // }
-            // catch (Exception ex)
-            // {
-            //     await HandleExceptionAsync(httpContext, ex);
-            // }
+            try
+            {
+                await _next(httpContext);
+            }
+            catch (Exception ex)
+            {
+                await HandleExceptionAsync(httpContext, ex);
+            }
         }
 
 
