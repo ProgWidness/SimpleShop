@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SimpleShop.Buisness;
 using SimpleShop.Data;
 
 namespace SimpleShop.Config
@@ -8,6 +9,7 @@ namespace SimpleShop.Config
         public static void RegistrateServicesConfig(this IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductService>();
         }
     }
 }
