@@ -16,9 +16,15 @@ namespace SimpleShop
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json");
+            if (!env.IsProduction())
+            {
+                builder.AddJsonFile($"appsettings.{env.EnvironmentName}.json");
+            }
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
